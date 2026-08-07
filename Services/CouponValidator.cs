@@ -23,3 +23,5 @@ public class CouponValidator
         return "BAŞARILI: %20 İndirim uygulandı!";
     }
 }
+
+Kupon kodunun geçerlilik süresi, minimum sepet limiti ve kuponun aktiflik durumunu denetleyen gelişmiş bir kural seti.
