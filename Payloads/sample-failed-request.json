@@ -1,0 +1,8 @@
+{
+  "orderId": 1002,
+  "totalAmount": 50.00,
+  "stockCount": 0,
+  "isCustomerActive": false,
+  "requestedQuantity": 5,
+  "note": "Bu istek hem bakiye yetersizliğinden hem de stok olmadığından REDDEDİLECEKTİR."
+}
