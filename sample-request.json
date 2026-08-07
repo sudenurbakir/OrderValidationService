@@ -1,0 +1,7 @@
+{
+  "orderId": 1001,
+  "totalAmount": 450.50,
+  "stockCount": 12,
+  "isCustomerActive": true,
+  "requestedQuantity": 2
+}
