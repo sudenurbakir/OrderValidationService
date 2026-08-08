@@ -15,3 +15,14 @@ CREATE TABLE Coupons (
     ExpiryDate DATETIME NOT NULL,
     MinBasketAmount DECIMAL(18,2) NOT NULL
 );
+
+-- 3. Mağaza Kargo Konfigürasyon Tablosu (MerchantShippingConfig.cs Karşılığı)
+CREATE TABLE MerchantShippingConfigs (
+    ConfigId INT PRIMARY KEY IDENTITY(1,1),
+    MerchantId INT NOT NULL,                  -- Mağaza ID
+    Strategy INT NOT NULL,                    -- 0: Disabled, 1: FlatRate, 2: BasketThreshold, 3: DesiBased
+    FixedFee DECIMAL(18,2) DEFAULT 0.00,       -- Sabit Kargo Ücreti
+    FreeShippingThreshold DECIMAL(18,2) DEFAULT 0.00, -- Ücretsiz Kargo Limiti
+    PricePerDesi DECIMAL(18,2) DEFAULT 0.00,  -- Desi Başına Birim Fiyat
+    UpdatedDate DATETIME DEFAULT GETDATE()
+);
