@@ -51,3 +51,17 @@ SELECT CouponCode, ExpiryDate, MinBasketAmount
 FROM Coupons
 WHERE IsActive = 1 
   AND ExpiryDate BETWEEN GETDATE() AND DATEADD(day, 30, GETDATE());
+
+-- Kargo Stratejilerine Göre Mağaza Ayarları ve Risk Denetimi
+SELECT 
+    MerchantId,
+    CASE Strategy
+        WHEN 0 THEN 'Kargo Kullanılmıyor (Disabled)'
+        WHEN 1 THEN 'Sabit Ücret (FlatRate)'
+        WHEN 2 THEN 'Sepet Limitli (BasketThreshold)'
+        WHEN 3 THEN 'Desi Bazlı (DesiBased)'
+    END AS KargoModeli,
+    FixedFee AS SabitUcret,
+    FreeShippingThreshold AS UcretsizKargoLimiti,
+    PricePerDesi AS DesiBasiUcret
+FROM MerchantShippingConfigs;
